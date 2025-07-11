@@ -1,0 +1,21 @@
+Стили использования модуля FS
+
+Callback API - испольвание callback функций (асинхронно) | const fs = require('fs')
+Promise API - испольвание промисов (асинхронно) | const fs = require('fs/promises')
+Synchronous API
+
+функциии в модуле FS:
+
+ASYNC
+readFile
+writeFile
+unlink (удаление файла)
+...
+
+
+SYNC
+readFileSync
+writeFileSync
+unlinkSync
+...
+

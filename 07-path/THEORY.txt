@@ -1,0 +1,11 @@
+Модуль path
+
+Соединение сегментов пути
+
+const path = require('path')
+const linuxP = path.join('/usr', 'node', 'app.js');
+const windowsP = path.join('D:\\', 'node', 'app.js');
+
+Расяет абсолютного пути
+
+const result = path.resolve('node', 'index.js')
