@@ -1,0 +1,22 @@
+Настройка роутинга
+
+Добавление обработчика
+app.httpMethod(requestPath, handleFn)
+
+Добавление нескольких обработчиков
+app.httpMethod(requestPath, handleFn1, handleFn2, ...)
+В таком случае, колбэки вызываются одна за другой
+
+app.get('/', (req, res) => {
+    res.send('Response from Express')
+})
+
+req - Объект, содержащий все детали запроса
+res - Объект, содержащий все детали ответа
+
+app.post('/users, (req, res) => {
+    res.send('User was created)
+})
+
+поддерживает много методов DELETE PUT PATCH и тд
+После вызова метода send оставшиеся обработчики не вызываются

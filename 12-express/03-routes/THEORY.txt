@@ -1,0 +1,42 @@
+методы добавления маршрутов
+
+app.get('/users', (req, res) => {
+    console.log('GET /users')
+})
+
+app.post('/users', (req, res) => {
+    console.log('POST /users')
+})
+
+Второй способ
+
+
+app
+    .route('/users')
+    .get((req, res) => {
+        console.log('GET /users')
+    })
+    .post((req, res) => {
+        console.log('POST /users')
+    })
+
+маршруты в отдельных модулях
+файл routes/users.js (обычно модули с маршрутами помещают в директорию routes)
+
+const express = require('express')
+const userRouter = express.Router();
+userRouter.get('/', (req, res) => {
+    //code
+})
+export default userRouter;
+
+
+файл app.js
+const express = require('express')
+const usersRouter = require('./routes/users.js')
+
+const app = express()
+app.use('/users', usersRouter) 
+use разрешает использование всех методов запросов
+
+// считай как перенаправление в urlpatterns приложений в django
